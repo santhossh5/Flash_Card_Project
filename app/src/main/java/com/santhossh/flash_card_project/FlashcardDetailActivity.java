@@ -39,12 +39,12 @@ public class FlashcardDetailActivity extends AppCompatActivity {
     private void flipCard() {
         if (isFront) {
             // Show the answer, hide the question
-            ObjectAnimator.ofFloat(cardView, "rotationY", 0f, 180f).setDuration(500).start();
+            ObjectAnimator.ofFloat(cardView, "rotationY", 0f, 360f).setDuration(500).start();
             answerTextView.setVisibility(View.VISIBLE);
             questionTextView.setVisibility(View.INVISIBLE);
         } else {
             // Show the question, hide the answer
-            ObjectAnimator.ofFloat(cardView, "rotationY", 180f, 360f).setDuration(500).start();
+            ObjectAnimator.ofFloat(cardView, "rotationY", 360f, 0f).setDuration(500).start();
             answerTextView.setVisibility(View.INVISIBLE);
             questionTextView.setVisibility(View.VISIBLE);
         }

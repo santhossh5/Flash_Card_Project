@@ -40,6 +40,14 @@ public class FlashcardAdapter extends RecyclerView.Adapter<FlashcardAdapter.Flas
         Flashcard flashcard = flashcardList.get(position);
         holder.titleTextView.setText(flashcard.getTitle());
 
+        // Set the click listener for navigating to the detail activity
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, FlashcardDetailActivity.class);
+            intent.putExtra("question", flashcard.getQuestion());
+            intent.putExtra("answer", flashcard.getAnswer());
+            context.startActivity(intent);
+        });
+
         // Set Edit button functionality
         holder.itemView.findViewById(R.id.editButton).setOnClickListener(v -> {
             // Pass the Firestore document ID to Edit activity

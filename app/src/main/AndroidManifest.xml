@@ -23,6 +23,7 @@
         <activity android:name=".AddFlashcardActivity"/>
         <activity android:name=".EditFlashcardActivity"/>
         <activity android:name=".FlashcardDetailActivity"/>
+        <activity android:name=".ViewFlashcardActivity"/>
     </application>
 
 </manifest>

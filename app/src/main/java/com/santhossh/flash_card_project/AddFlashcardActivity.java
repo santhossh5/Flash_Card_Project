@@ -28,7 +28,6 @@ public class AddFlashcardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveFlashcard();
-                finish();
             }
         });
     }
@@ -39,10 +38,11 @@ public class AddFlashcardActivity extends AppCompatActivity {
         String answer = answerField.getText().toString().trim();
 
         if (!title.isEmpty() && !question.isEmpty() && !answer.isEmpty()) {
-            Map<String, String> flashcard = new HashMap<>();
+            Map<String, Object> flashcard = new HashMap<>();
             flashcard.put("title", title);
             flashcard.put("question", question);
             flashcard.put("answer", answer);
+            flashcard.put("isMarked", false); // Set isMarked to false by default
 
             firestore.collection("flashcards").add(flashcard)
                     .addOnSuccessListener(documentReference -> {

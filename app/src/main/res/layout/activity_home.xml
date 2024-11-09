@@ -7,6 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/addButton"/>
+    <!-- In your HomeActivity layout -->
+    <Button
+        android:id="@+id/viewFlashcardsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Flashcards"
+        android:layout_below="@+id/recyclerView"
+        android:layout_marginTop="16dp" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
@@ -16,4 +25,5 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add" />
+
 </RelativeLayout>

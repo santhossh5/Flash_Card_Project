@@ -39,15 +39,22 @@ public class FlashcardDetailActivity extends AppCompatActivity {
     private void flipCard() {
         if (isFront) {
             // Show the answer, hide the question
-            ObjectAnimator.ofFloat(cardView, "rotationY", 0f, 360f).setDuration(500).start();
+            ObjectAnimator.ofFloat(cardView, "rotationY", 0f, 180f).setDuration(500).start();
             answerTextView.setVisibility(View.VISIBLE);
             questionTextView.setVisibility(View.INVISIBLE);
+
+            // Apply negative scale on the answer to counteract the mirrored effect
+            answerTextView.setScaleX(-1f);  // Flip horizontally
         } else {
             // Show the question, hide the answer
-            ObjectAnimator.ofFloat(cardView, "rotationY", 360f, 0f).setDuration(500).start();
+            ObjectAnimator.ofFloat(cardView, "rotationY", 180f, 360f).setDuration(500).start();
             answerTextView.setVisibility(View.INVISIBLE);
             questionTextView.setVisibility(View.VISIBLE);
+
+            // Reset the scale for the question text
+            answerTextView.setScaleX(1f);  // Reset flip effect
         }
         isFront = !isFront;  // Toggle the state between showing question or answer
     }
+
 }

@@ -45,6 +45,7 @@ public class FlashcardAdapter extends RecyclerView.Adapter<FlashcardAdapter.Flas
             Intent intent = new Intent(context, FlashcardDetailActivity.class);
             intent.putExtra("question", flashcard.getQuestion());
             intent.putExtra("answer", flashcard.getAnswer());
+            intent.putExtra("title", flashcard.getTitle());
             context.startActivity(intent);
         });
 

@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
+        <activity android:name=".AddFlashcardActivity"/>
+        <activity android:name=".EditFlashcardActivity"/>
+        <activity android:name=".FlashcardDetailActivity"/>
     </application>
 
 </manifest>

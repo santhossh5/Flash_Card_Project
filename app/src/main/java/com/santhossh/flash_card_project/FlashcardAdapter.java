@@ -75,6 +75,7 @@ public class FlashcardAdapter extends RecyclerView.Adapter<FlashcardAdapter.Flas
                                 firestore.collection("flashcards").document(documentId)
                                         .delete()
                                         .addOnSuccessListener(aVoid -> {
+                                            // Remove the flashcard from the list
                                             flashcardList.remove(position);  // Remove the flashcard from the list
                                             notifyItemRemoved(position);  // Notify the adapter about the change
                                             Toast.makeText(context, "Flashcard deleted", Toast.LENGTH_SHORT).show();
